@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		div {
+			width: 600px;
+			height: 130px;
+			border: 2px solid black;
+			padding: 15px;
+			position: absolute;
+			left: 27%;
+		}
+	</style>
+</head>
+<body>
+    <center>
+		<h1 style="color:#808;padding:13px;">
+		Project
+		</h1>
+		<h3>
+            Create a simple ui with one input field that accepts only numbers
+		</h3>
+	</center>
+
+    <div class="container">
+		<form name="inputnumber"
+			autocomplete="off">
+			<b>Input Field </b>
+			<input type="text" name="name" id="Ip"
+				onkeypress="return onlyNumberKey(event)"
+				maxlength="11"
+				size="50%" />
+            <p id="values">Enter Only Positive Value</p>
+            <br>
+			<br>
+
+    <script>
+        const input = document.querySelector("input");
+        const log = document.getElementById("values");
+        
+        
+
+        input.addEventListener("input", updateValue);
+
+function updateValue(e) {
+     
+     var num = e.target.value; 
+     var res = "";
+      count = 0;
+
+ if (num <= 0) {
+  log.textContent = "Enter a positive value";
+  
+
+ } 
+ else if (num % 2 == 0) {
+       num++;
+
+   while (count < 3) {
+
+     if (num % 2 == 0) {
+       res += " " + num + ",";
+       num++;
+       count++;
+     }
+      else {
+       num++;
+     }
+   }
+   log.textContent = res;
+ } 
+ else {
+    num++;
+   while (count < 3) {
+     if (num % 2 != 0) {
+       res += " " + num + ",";
+       num++;
+       count++;
+     } 
+     else {
+       num++;
+     }
+   }
+   log.textContent = res;
+ }
+
+}
+    
+    </script>
+</body>
+</html>
